@@ -1,6 +1,14 @@
-import React from "react";
+interface TaskProps {
+  task: {
+    id: number;
+    name: string;
+    completed: boolean;
+  };
+  toggleTask: (id: number) => void;
+  deleteTask: (id: number) => void;
+}
 
-function Task({ task, toggleTask, deleteTask }) {
+function Task({ task, toggleTask, deleteTask }: TaskProps) {
   return (
     <div>
       <input
