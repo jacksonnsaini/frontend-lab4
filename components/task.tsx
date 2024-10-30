@@ -1,3 +1,5 @@
+import React from "react";
+
 interface TaskProps {
   task: {
     id: number;
@@ -10,11 +12,12 @@ interface TaskProps {
 
 function Task({ task, toggleTask, deleteTask }: TaskProps) {
   return (
-    <div>
+    <div className="task">
       <input
         type="checkbox"
         checked={task.completed}
         onChange={() => toggleTask(task.id)}
+        disabled={task.completed} 
       />
       <p>{task.name}</p>
       <button onClick={() => deleteTask(task.id)}>
